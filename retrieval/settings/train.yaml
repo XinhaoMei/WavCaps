@@ -1,0 +1,56 @@
+device: "cuda"
+seed: 20
+embed_size: 1024
+temp: 0.07
+resume: false
+pretrain: true
+pretrain_path: 'outputs/pretrain/audio_classification/HTSAT_reg_lr_5e-05_seed_20/models/clotho_best_model.pt'
+embed_regularization: true
+
+dist_args:
+  world_size: 1
+
+audio_args:
+  sr: 32000
+  n_fft: 1024
+  hop_length: 320
+  f_min: 50
+  f_max: 14000
+  n_mels: 64
+  max_length: 30
+  mono: True
+
+
+audio_encoder_args:
+  type: "cnn"
+  model: "Cnn14"
+  pretrained: True
+  freeze: False
+
+
+data_args:
+  dataset: "Clotho"
+  batch_size: 128
+  num_workers: 8
+
+
+text_encoder_args:
+  type: 'bert-base-uncased'
+  freeze: False
+
+
+optim_args:
+  lr: !!float 5e-5
+  warmup_steps: 0
+  optimizer_name: "adam"
+  betas: [0.9, 0.999]
+  eps: !!float 1e-8
+  momentum: 0.9
+  warmup_epochs: 0
+
+
+training:
+  spec_augmentation: True
+  epochs: 20
+  clip_grad: 2
+  dropout: 0.2

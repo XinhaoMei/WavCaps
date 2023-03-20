@@ -28,7 +28,7 @@ WavCaps are sourced from three websites and a sound event detection dataset:
 [ChatGPT](https://openai.com/blog/chatgpt) is leveraged to process and transform raw-descriptions into captions.
 
 We release WavCaps dataset under json or csv formats, where the key `description` contains raw-description and `caption` contains our processed caption.
-These files are under `data` directory.
+These files are under [data](https://github.com/XinhaoMei/WavCaps/tree/master/data) directory.
 
 ### License
 Only academic uses are allowed for WavCaps dataset. By downloading audio clips through the links provided in the json files, you agree that you will use the audios for research purposes only.
@@ -41,9 +41,9 @@ For detailed license information, please refer to:
 ## Codes
 We provide codes and pre-trained models for audio-language retrieval, automated audio captioning, and zero-shot audio classification.
 
-* [Retrieval]()
-* [Captioning]()
-* [Zero-shot Audio Classification]()
+* [Retrieval](https://github.com/XinhaoMei/WavCaps/tree/master/retrieval)
+* [Captioning](https://github.com/XinhaoMei/WavCaps/tree/master/captioning)
+* [Zero-shot Audio Classification](https://github.com/XinhaoMei/WavCaps/blob/master/retrieval/zero_shot_classification.py)
 * [Text-to-Sound Generation](https://github.com/haoheliu/AudioLDM)
 
 ## Citation

@@ -126,8 +126,7 @@ def main():
     exp_name = exp_name + f"lr_{config['optim_args']['lr']}_seed_{seed}"
 
     wandb.init(
-        project="audio-captioning-WavCaps",
-        entity="blueheart",
+        project="audio-captioning",
         name=exp_name,
         config=config
     )

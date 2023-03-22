@@ -110,8 +110,7 @@ def main():
     exp_name = exp_name + f"_{args.dataset}_lr_{args.lr}_seed_{seed}"
 
     wandb.init(
-        project="AT-retrieval-dist",
-        entity="blueheart",
+        project="AT-retrieval",
         name=exp_name,
         config=config
     )

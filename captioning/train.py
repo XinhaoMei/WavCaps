@@ -81,8 +81,7 @@ def main():
                      f'{printer.pformat(config)}')
 
     wandb.init(
-        project="audio-captioning-local",
-        entity="blueheart",
+        project="audio-captioning",
         name=folder_name,
         config=config
     )

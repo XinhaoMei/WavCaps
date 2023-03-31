@@ -1,5 +1,5 @@
 # WavCaps
-WavCaps: A ChatGPT-Assisted Weakly-Labelled Audio Captioning Dataset for Audio-Language Multimodal Research.
+WavCaps: A ChatGPT-Assisted Weakly-Labelled Audio Captioning Dataset for Audio-Language Multimodal Research. [(ArXiv)](https://arxiv.org/abs/2303.17395)
 
 ### Table of Contents
 1. [Introduction](#introduction)

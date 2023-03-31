@@ -5,7 +5,7 @@ WavCaps: A ChatGPT-Assisted Weakly-Labelled Audio Captioning Dataset for Audio-L
 1. [Introduction](#introduction)
 2. [Dataset](#dataset)
 3. [Codes and Models](#codes)
-5. [Citation](#citation)
+4. [Citation](#citation)
 
 ## Introduction
 
@@ -37,7 +37,7 @@ These files are under [data](https://github.com/XinhaoMei/WavCaps/tree/master/da
 For audio clips from AudioSet and BBC Sound Effects, we do not provide download links. Please refer to their websites for downloading.
 
 For audio clips from FreeSound and SoundBible, we provide metadata including original file names, raw descriptions, and links.
-In addition, we also provide waveforms for audio clips from FreeSound whose duration is less than 2 seconds.
+In addition, we also provide waveforms for audio clips from FreeSound whose duration is less than 2 seconds. [Download]() (Will be available soon)
 
 Please first consider downloading waveforms we provide instead of crawling from FreeSound.
 
@@ -56,11 +56,19 @@ We provide codes and pre-trained models for audio-language retrieval, automated 
 * [Captioning](https://github.com/XinhaoMei/WavCaps/tree/master/captioning)
 * [Zero-shot Audio Classification](https://github.com/XinhaoMei/WavCaps/blob/master/retrieval/zero_shot_classification.py)
 * [Text-to-Sound Generation](https://github.com/haoheliu/AudioLDM)
+* [Models](https://drive.google.com/drive/folders/1pFr8IRY3E1FAtc2zjYmeuSVY3M5a-Kdj?usp=share_link)
 
 ## Citation
 
 Please cite our paper as below if you use the WavCaps dataset.
-
+```
+@article{mei2023WavCaps,
+  title={Wav{C}aps: A {ChatGPT}-Assisted Weakly-Labelled Audio Captioning Dataset for Audio-Language Multimodal Research},
+  author={Xinhao Mei and Chutong Meng and Haohe Liu and Qiuqiang Kong and Tom Ko and Chengqi Zhao and Mark D. Plumbley and Yuexian Zou and Wenwu Wang},
+  journal={arXiv preprint arXiv:2303.17395},
+  year={2023}
+}
+```
 
 
 

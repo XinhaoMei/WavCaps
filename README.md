@@ -1,5 +1,7 @@
 [![arXiv](https://img.shields.io/badge/arXiv-2301.12503-brightgreen.svg?style=flat-square)](https://arxiv.org/abs/2303.17395)
 
+:star2: We are still exploring the best way for you to easily access WavCaps. Please stay tuned for the update in the next week!
+
 # WavCaps
 WavCaps: A ChatGPT-Assisted Weakly-Labelled Audio Captioning Dataset for Audio-Language Multimodal Research. [(ArXiv)](https://arxiv.org/abs/2303.17395)
 

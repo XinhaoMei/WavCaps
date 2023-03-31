@@ -3,15 +3,23 @@
 # WavCaps
 WavCaps: A ChatGPT-Assisted Weakly-Labelled Audio Captioning Dataset for Audio-Language Multimodal Research. [(ArXiv)](https://arxiv.org/abs/2303.17395)
 
-### Table of Contents
+This repository contains:
+
+- Metadata of WavCaps dataset.
+- Source code for related tasks: audio-language retrieval, automated audio captioning, and zero-shot audio classification.
+
+## Table of Contents
+
 
 - [WavCaps](#wavcaps)
-    - [Table of Contents](#table-of-contents)
+  - [Table of Contents](#table-of-contents)
   - [Introduction](#introduction)
   - [Dataset](#dataset)
-    - [License](#license)
-  - [Codes](#codes)
+  - [License](#license)
+  - [Code for related tasks](#code-for-related-tasks)
   - [Citation](#citation)
+
+
 
 ## Introduction
 
@@ -23,8 +31,6 @@ To overcome this issue, we propose a three-stage processing pipeline for filteri
 
 We conduct a comprehensive analysis of the characteristics of WavCaps dataset and evaluate it on multiple downstream audio-language multimodal learning tasks. The systems trained on WavCaps outperform previous state-of-the-art (SOTA) models by a significant margin. 
 Our aspiration is for the WavCaps dataset we have proposed to facilitate research in audio-language multimodal learning and demonstrate the potential of utilizing ChatGPT to enhance academic research.
-
-This repository contains the dataset, and source codes for downstream tasks.
 
 ## Dataset
 
@@ -46,7 +52,7 @@ In addition, we also provide waveforms for audio clips from FreeSound whose dura
 
 Please first consider downloading waveforms we provide instead of crawling from FreeSound.
 
-### License
+## License
 Only academic uses are allowed for WavCaps dataset. By downloading audio clips through the links provided in the json files, you agree that you will use the audios for research purposes only.
 For credits for audio clips from FreeSound, please refer to its own page.
 
@@ -54,7 +60,7 @@ For detailed license information, please refer to:
 [FreeSound](https://freesound.org/help/faq/#licenses), [BBC Sound Effects](https://sound-effects.bbcrewind.co.uk/licensing), [SoundBible](https://soundbible.com/about.php)
 
 
-## Codes
+## Code for related tasks
 We provide codes and pre-trained models for audio-language retrieval, automated audio captioning, and zero-shot audio classification.
 
 * [Retrieval](https://github.com/XinhaoMei/WavCaps/tree/master/retrieval)

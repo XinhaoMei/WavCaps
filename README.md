@@ -9,10 +9,9 @@ WavCaps: A ChatGPT-Assisted Weakly-Labelled Audio Captioning Dataset for Audio-L
 
 ## Introduction
 
-The advancement of audio-language (AL) multimodal learning tasks has been significant in recent years. 
-However, researchers face challenges due to the costly and time-consuming collection process of existing audio-language datasets, which are limited in size. 
-To address this data scarcity issue, we introduce WavCaps, the first large-scale weakly-labelled audio captioning dataset, comprising approximately 400k audio clips with paired captions.
-We sourced audio clips and their raw descriptions from web sources and a sound event detection dataset. 
+The advancement of audio-language (AL) multimodal learning tasks has been significant in recent years, yet the limited size of existing audio-language datasets poses challenges for researchers due to the costly and time-consuming collection process. 
+To address this data scarcity issue, we introduce WavCaps, the first large-scale weakly-labelled audio captioning dataset, comprising approximately 400k audio clips with paired captions. 
+We sourced audio clips and their raw descriptions from web sources and a sound event detection dataset.
 However, the online-harvested raw descriptions are highly noisy and unsuitable for direct use in tasks such as automated audio captioning.
 To overcome this issue, we propose a three-stage processing pipeline for filtering noisy data and generating high-quality captions, where ChatGPT, a large language model, is leveraged to filter and transform raw descriptions automatically. 
 

@@ -44,12 +44,13 @@ WavCaps are sourced from three websites and a sound event detection dataset:
 
 [ChatGPT](https://openai.com/blog/chatgpt) is leveraged to process and transform raw-descriptions into captions.
 
-We release WavCaps dataset under json or csv formats, where the key `description` contains raw-description and `caption` contains our processed caption.
+We release WavCaps dataset under json formats, where the key `description` contains raw-description and `caption` contains our processed caption.
 These files are under [data](https://github.com/XinhaoMei/WavCaps/tree/master/data) directory (excluding FreeSound) or can be downloaded through [here](https://drive.google.com/drive/folders/1h9P4_qiNVZR-PIZrL5Ow0v62S8C4ygyo?usp=share_link).
 
-For audio clips from AudioSet and BBC Sound Effects, we do not provide download links. Please refer to their websites for downloading.
+For audio clips from AudioSet, we do not provide download links. Please refer to their websites or [PANNS](https://github.com/qiuqiangkong/audioset_tagging_cnn) for downloading . 
+We use the version from PANNs and each file name is appended with a 'Y' at the start. 
 
-For audio clips from FreeSound and SoundBible, we provide metadata including original file names, raw descriptions, and links.
+For audio clips from FreeSound, SoundBible, and BBC Sound Effects, we provide metadata including original file names, raw descriptions, and download links.
 In addition, we also provide waveforms for audio clips from FreeSound whose duration is less than 2 seconds. [Download]() (Will be available soon)
 
 Please first consider downloading waveforms we provide instead of crawling from FreeSound.
@@ -60,6 +61,8 @@ For credits for audio clips from FreeSound, please refer to its own page.
 
 For detailed license information, please refer to:
 [FreeSound](https://freesound.org/help/faq/#licenses), [BBC Sound Effects](https://sound-effects.bbcrewind.co.uk/licensing), [SoundBible](https://soundbible.com/about.php)
+
+The models we provided are created under a UK data copyright exemption for non-commercial research.
 
 
 ## Code for related tasks

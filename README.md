@@ -1,11 +1,17 @@
+[![arXiv](https://img.shields.io/badge/arXiv-2301.12503-brightgreen.svg?style=flat-square)](https://arxiv.org/abs/2303.17395)
+
 # WavCaps
 WavCaps: A ChatGPT-Assisted Weakly-Labelled Audio Captioning Dataset for Audio-Language Multimodal Research. [(ArXiv)](https://arxiv.org/abs/2303.17395)
 
 ### Table of Contents
-1. [Introduction](#introduction)
-2. [Dataset](#dataset)
-3. [Codes and Models](#codes)
-4. [Citation](#citation)
+
+- [WavCaps](#wavcaps)
+    - [Table of Contents](#table-of-contents)
+  - [Introduction](#introduction)
+  - [Dataset](#dataset)
+    - [License](#license)
+  - [Codes](#codes)
+  - [Citation](#citation)
 
 ## Introduction
 
@@ -60,7 +66,7 @@ We provide codes and pre-trained models for audio-language retrieval, automated 
 ## Citation
 
 Please cite our paper as below if you use the WavCaps dataset.
-```
+```bibtex
 @article{mei2023WavCaps,
   title={Wav{C}aps: A {ChatGPT}-Assisted Weakly-Labelled Audio Captioning Dataset for Audio-Language Multimodal Research},
   author={Xinhao Mei and Chutong Meng and Haohe Liu and Qiuqiang Kong and Tom Ko and Chengqi Zhao and Mark D. Plumbley and Yuexian Zou and Wenwu Wang},

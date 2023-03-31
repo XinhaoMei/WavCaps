@@ -51,7 +51,7 @@ For audio clips from AudioSet, we do not provide download links. Please refer to
 We use the version from PANNs and each file name is appended with a 'Y' at the start. 
 
 For audio clips from FreeSound, SoundBible, and BBC Sound Effects, we provide metadata including original file names, raw descriptions, and download links.
-In addition, we also provide waveforms for audio clips from FreeSound whose duration is less than 2 seconds. [Download]() (Will be available soon)
+In addition, we also provide waveforms for audio clips from FreeSound whose duration is less than 2 seconds (222935 audio clips). [Download]() (Will be available soon)
 
 Please first consider downloading waveforms we provide instead of crawling from FreeSound.
 

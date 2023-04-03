@@ -1,9 +1,9 @@
-[![arXiv](https://img.shields.io/badge/arXiv-2301.12503-brightgreen.svg?style=flat-square)](https://arxiv.org/abs/2303.17395)
+[![arXiv](https://img.shields.io/badge/arXiv-2303.17395-brightgreen.svg?style=flat-square)](https://arxiv.org/abs/2303.17395)
 
 :star2: We are still exploring the best way for you to easily access WavCaps. Please stay tuned for the update in the next week!
 
 # WavCaps
-WavCaps: A ChatGPT-Assisted Weakly-Labelled Audio Captioning Dataset for Audio-Language Multimodal Research. [(ArXiv)](https://arxiv.org/abs/2303.17395)
+WavCaps: A ChatGPT-Assisted Weakly-Labelled Audio Captioning Dataset for Audio-Language Multimodal Research. [(arXiv)](https://arxiv.org/abs/2303.17395)
 
 This repository contains:
 
@@ -45,7 +45,7 @@ WavCaps are sourced from three websites and a sound event detection dataset:
 [ChatGPT](https://openai.com/blog/chatgpt) is leveraged to process and transform raw-descriptions into captions.
 
 We release WavCaps dataset under json formats, where the key `description` contains raw-description and `caption` contains our processed caption.
-These files are under [data](https://github.com/XinhaoMei/WavCaps/tree/master/data) directory (excluding FreeSound) or can be downloaded through [here](https://drive.google.com/drive/folders/1h9P4_qiNVZR-PIZrL5Ow0v62S8C4ygyo?usp=share_link).
+These files are under [data](https://github.com/XinhaoMei/WavCaps/tree/master/data) directory or can be downloaded through [here](https://drive.google.com/drive/folders/1h9P4_qiNVZR-PIZrL5Ow0v62S8C4ygyo?usp=share_link).
 
 For audio clips from AudioSet, we do not provide download links. Please refer to their websites or [PANNS](https://github.com/qiuqiangkong/audioset_tagging_cnn) for downloading . 
 We use the version from PANNs and each file name is appended with a 'Y' at the start. 

@@ -1,8 +1,8 @@
 exp_name: 'baseline'
 device: "cuda"
 seed: 20
-json_files: ['/mnt/fast/nobackup/scratch4weeks/xm00178/WavCaps/data/json_files/BBC_Sound_Effects/bbc_pretrain.json', '/mnt/fast/nobackup/scratch4weeks/xm00178/WavCaps/data/json_files/FreeSound/fsd_pretrain.json', '/mnt/fast/nobackup/scratch4weeks/xm00178/WavCaps/data/json_files/SoundBible/sb_pretrain.json', "/mnt/fast/nobackup/scratch4weeks/xm00178/WavCaps/data/json_files/AudioSet_SL/as_pretrain.json", "data/AudioCaps/json_files/train.json", "data/Clotho/json_files/train.json"]
-blacklist: "/mnt/fast/nobackup/scratch4weeks/xm00178/WavCaps/data/json_files/blacklist/blacklist_exclude_test_ac.json"
+json_files: ['data/json_files/BBC_Sound_Effects/bbc_pretrain.json', 'data/json_files/FreeSound/fsd_pretrain.json', 'data/json_files/SoundBible/sb_pretrain.json', "data/json_files/AudioSet_SL/as_pretrain.json", "data/AudioCaps/json_files/train.json", "data/Clotho/json_files/train.json"]
+blacklist: "data/json_files/blacklist/blacklist_exclude_test_ac.json"
 
 
 audio_args:

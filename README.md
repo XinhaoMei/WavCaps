@@ -47,11 +47,11 @@ WavCaps are sourced from three websites and a sound event detection dataset:
 We release WavCaps dataset under json formats, where the key `description` contains raw-description and `caption` contains our processed caption.
 These files are under [data](https://github.com/XinhaoMei/WavCaps/tree/master/data) directory or can be downloaded through [here](https://drive.google.com/drive/folders/1h9P4_qiNVZR-PIZrL5Ow0v62S8C4ygyo?usp=share_link).
 
-For audio clips from AudioSet, we do not provide download links. Please refer to their websites or [PANNS](https://github.com/qiuqiangkong/audioset_tagging_cnn) for downloading . 
-We use the version from PANNs and each file name is appended with a 'Y' at the start. 
+For audio clips from AudioSet, we use the version from [PANNs](https://github.com/qiuqiangkong/audioset_tagging_cnn) and each file name is appended with a 'Y' at the start. [Download](https://drive.google.com/drive/folders/1Saof1TVquzppW-6p8BqEabgR-rHVNCTu?usp=share_link) 
+ 
 
 For audio clips from FreeSound, SoundBible, and BBC Sound Effects, we provide metadata including original file names, raw descriptions, and download links.
-In addition, we also provide waveforms for audio clips from FreeSound whose duration is less than 2 minutes (222935 audio clips). [Download](https://drive.google.com/drive/folders/1_Ah89Zqcn2SQUjZs-lb_PNgZx2ZWXeK5?usp=share_link) 
+We also provide waveforms for audio clips from FreeSound whose duration is less than 2 minutes (222935 audio clips). [Download](https://drive.google.com/drive/folders/1_Ah89Zqcn2SQUjZs-lb_PNgZx2ZWXeK5?usp=share_link) 
 
 Please first consider downloading waveforms we provide instead of crawling from FreeSound.
 

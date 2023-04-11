@@ -1,0 +1,72 @@
+exp_name: 'baseline'
+device: "cuda"
+pretrain: false
+pretrain_path: "outputs/pretrain/all_data/HTSAT_BART_lr_5e-05_seed_20/models/ac_best_model.pt"
+seed: 20
+
+
+audio_args:
+  sr: 32000
+  n_fft: 1024
+  hop_length: 320
+  f_min: 50
+  f_max: 14000
+  n_mels: 64
+  max_length: 10
+  mono: True
+
+
+data_args:
+  dataset: "AudioCaps"
+  batch_size: 32
+  num_workers: 8
+
+
+audio_encoder_args:
+  model_arch: "cnn"
+  model_name: "Cnn14"
+  pretrained: true
+  freeze: false
+  spec_augment: true
+
+
+text_decoder_args:
+  name: "facebook/bart-base"
+  pretrained: true
+  bert_args:
+    attention_probs_dropout_prob: 0.2
+    hidden_act: "gelu"
+    hidden_dropout_prob: 0.2
+    hidden_size: 768
+    initializer_range: 0.02
+    intermediate_size: 2048
+    layer_norm_eps: !!float 1e-5
+    max_position_embeddings: 128
+    model_type: "bert"
+    num_attention_heads: 4
+    num_hidden_layers: 2
+    add_type_embeddings: false
+    vocab_size: 30522
+    add_cross_attention: true
+    is_decoder: true
+    num_labels: 0
+    name: "bert-base-uncased"
+
+
+optim_args:
+  lr: !!float 1e-4
+  warmup_steps: 6400
+  optimizer_name: "adam"
+  betas: [0.9, 0.999]
+  eps: !!float 1e-8
+  momentum: 0.9
+  gamma: 0.1
+  warmup_epochs: 2
+  step_epochs: 10
+  weight_decay: !!float 1e-6
+
+
+training:
+  epochs: 20
+  clip_grad: 2
+  dropout: 0.2

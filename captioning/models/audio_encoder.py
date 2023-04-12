@@ -37,7 +37,7 @@ class AudioEncoderModel(PreTrainedModel):
                 for i in range(len(trained_list)):
                     dict_new[trained_list[i]] = pretrained_cnn[trained_list[i]]
                 self.audio_enc.load_state_dict(dict_new)
-                print("Weights loaded for audio encoder.")
+                # print("Weights loaded for audio encoder.")
             self.audio_width = 2048
         elif config.model_arch == "transformer":
             self.audio_enc = HTSAT_Swin_Transformer(
@@ -59,9 +59,9 @@ class AudioEncoderModel(PreTrainedModel):
                         v = audio_ckpt.pop(key)
                         audio_ckpt[key[10:]] = v
                 self.audio_enc.load_state_dict(audio_ckpt, strict=False)
-                param_names = [n for n, p in self.audio_enc.named_parameters()]
-                for n in param_names:
-                    print(n, "\t", "Loaded" if n in audio_ckpt else "Unloaded")
+                # param_names = [n for n, p in self.audio_enc.named_parameters()]
+                # for n in param_names:
+                #     print(n, "\t", "Loaded" if n in audio_ckpt else "Unloaded")
             self.audio_width = 768
         else:
             raise NotImplementedError('No such audio encoder network.')

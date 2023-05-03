@@ -1,6 +1,6 @@
 [![arXiv](https://img.shields.io/badge/arXiv-2303.17395-brightgreen.svg?style=flat-square)](https://arxiv.org/abs/2303.17395)
 
-:star2: We are still exploring the best way for you to easily access WavCaps. Please stay tuned for the update in the next week!
+:star2: WavCaps can be downloaded through [HuggingFace](https://huggingface.co/datasets/cvssp/WavCaps) now!
 
 # WavCaps
 WavCaps: A ChatGPT-Assisted Weakly-Labelled Audio Captioning Dataset for Audio-Language Multimodal Research. [(arXiv)](https://arxiv.org/abs/2303.17395)
@@ -44,16 +44,7 @@ WavCaps are sourced from three websites and a sound event detection dataset:
 
 [ChatGPT](https://openai.com/blog/chatgpt) is leveraged to process and transform raw-descriptions into captions.
 
-We release WavCaps dataset under json formats, where the key `description` contains raw-description and `caption` contains our processed caption.
-These files are under [data](https://github.com/XinhaoMei/WavCaps/tree/master/data) directory or can be downloaded through [here](https://drive.google.com/drive/folders/1h9P4_qiNVZR-PIZrL5Ow0v62S8C4ygyo?usp=share_link).
-
-For audio clips from AudioSet, we use the version from [PANNs](https://github.com/qiuqiangkong/audioset_tagging_cnn) and each file name is appended with a 'Y' at the start. [Google Drive](https://drive.google.com/drive/folders/1Saof1TVquzppW-6p8BqEabgR-rHVNCTu?usp=share_link) [BaiduYun](https://pan.baidu.com/s/1iRyUXzr6jEnsvmrgtVFaVQ?pwd=5r9a) 
- 
-
-For audio clips from FreeSound, SoundBible, and BBC Sound Effects, we provide metadata including original file names, raw descriptions, and download links.
-We also provide waveforms for audio clips from FreeSound whose duration is less than 2 minutes (222935 audio clips). [Google Drive](https://drive.google.com/drive/folders/1_Ah89Zqcn2SQUjZs-lb_PNgZx2ZWXeK5?usp=share_link) [BaiduYun](https://pan.baidu.com/s/1MG0aL5vZNzSXK-n9t1lklw?pwd=chyd) 
-
-Please first consider downloading waveforms we provide instead of crawling from FreeSound.
+We release WavCaps dataset on [HuggingFace](https://huggingface.co/datasets/cvssp/WavCaps). Each data source is released with a json file and corresponding wavefroms. 
 
 ## License
 Only academic uses are allowed for WavCaps dataset. By downloading audio clips through the links provided in the json files, you agree that you will use the audios for research purposes only.

@@ -12,12 +12,12 @@ audio_args:
   f_min: 50
   f_max: 14000
   n_mels: 64
-  max_length: 10
+  max_length: 0 # set to 10 for HTSAT encoder, and set to 0 or 30 for CNN encoder
   mono: True
 
 
 data_args:
-  dataset: "AudioCaps"
+  dataset: "Clotho"
   batch_size: 32
   num_workers: 8
 
@@ -54,6 +54,7 @@ text_decoder_args:
 
 
 optim_args:
+  scheduler: cosine
   lr: !!float 1e-4
   warmup_steps: 6400
   optimizer_name: "adam"

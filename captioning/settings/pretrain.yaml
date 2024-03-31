@@ -54,6 +54,7 @@ text_decoder_args:
 
 
 optim_args:
+  scheduler: cosine
   lr: !!float 3e-5
   warmup_steps: 6400
   optimizer_name: "adam"

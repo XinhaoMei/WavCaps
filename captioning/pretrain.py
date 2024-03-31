@@ -21,7 +21,7 @@ from tools.optim_utils import get_optimizer, cosine_lr
 from tools.utils import setup_seed, set_logger, AverageMeter, decode_output
 
 
-def train(model, dataloader, optimizer, scheduler, device, epoch):
+def train(model, dataloader, optimizer, scheduler, device, epoch, clip_grad=0):
     model.train()
 
     epoch_loss = AverageMeter()
@@ -41,6 +41,8 @@ def train(model, dataloader, optimizer, scheduler, device, epoch):
         loss = model(audio, text)
 
         loss.backward()
+        if clip_grad != 0:
+            torch.nn.utils.clip_grad_norm_(model.parameters(), clip_grad)
         optimizer.step()
 
         epoch_loss.update(loss.cpu().item())
@@ -157,10 +159,21 @@ def main():
                               momentum=config["optim_args"]["momentum"],
                               weight_decay=config["optim_args"]["weight_decay"],
                               optimizer_name=config["optim_args"]["optimizer_name"])
-    scheduler = cosine_lr(optimizer,
-                          base_lr=config["optim_args"]["lr"],
-                          warmup_length=config["optim_args"]["warmup_epochs"] * len(dataloader),
-                          steps=len(dataloader) * config["training"]["epochs"])
+    if config["optim_args"]["scheduler"] == "cosine":
+        scheduler = cosine_lr(optimizer,
+                              base_lr=config["optim_args"]["lr"],
+                              warmup_length=config["optim_args"]["warmup_epochs"] * len(train_loader),
+                              steps=len(train_loader) * config["training"]["epochs"])
+    elif config["optim_args"]["scheduler"] == "step":
+        scheduler = step_lr(optimizer,
+                            base_lr=config["optim_args"]["lr"],
+                            warmup_length=config["optim_args"]["warmup_epochs"] * len(train_loader),
+                            adjust_steps=config["optim_args"]["step_epochs"] * len(train_loader),
+                            gamma=config["optim_args"]["gamma"])
+    elif config["optim_args"]["scheduler"] == "old":
+        scheduler = None
+        scheduler_temp = torch.optim.lr_scheduler.StepLR(optimizer, 10, 0.1)
+        scheduler_warmup = GradualWarmupScheduler(optimizer, multiplier=1, total_epoch=5, after_scheduler=scheduler_temp)
 
     start_epoch = 1
     max_epoch = config["training"]["epochs"]
@@ -186,8 +199,9 @@ def main():
 
     for epoch in range(start_epoch, max_epoch + 1):
         main_logger.info(f'Training for epoch [{epoch}]')
-
-        train_statics = train(model, dataloader, optimizer, scheduler, device, epoch)
+        if scheduler is None:
+            scheduler_warmup.step()
+        train_statics = train(model, dataloader, optimizer, scheduler, device, epoch, config["training"]["clip_grad"])
         loss = train_statics["loss"]
         elapsed_time = train_statics["time"]
         loss_stats.append(loss)

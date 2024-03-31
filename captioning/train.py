@@ -103,20 +103,21 @@ def main():
                               momentum=config["optim_args"]["momentum"],
                               weight_decay=config["optim_args"]["weight_decay"],
                               optimizer_name=config["optim_args"]["optimizer_name"])
-    # scheduler = None
-    scheduler = cosine_lr(optimizer,
-                          base_lr=config["optim_args"]["lr"],
-                          warmup_length=config["optim_args"]["warmup_epochs"] * len(train_loader),
-                          steps=len(train_loader) * config["training"]["epochs"])
-    # scheduler = step_lr(optimizer,
-    #                     base_lr=config["optim_args"]["lr"],
-    #                     warmup_length=config["optim_args"]["warmup_epochs"] * len(train_loader),
-    #                     adjust_steps=config["optim_args"]["step_epochs"] * len(train_loader),
-    #                     gamma=config["optim_args"]["gamma"])
-    # scheduler_temp = None
-    # optimizer = torch.optim.Adam(params=model.parameters(), lr=config["optim_args"]["lr"], weight_decay=1e-6)
-    # scheduler = torch.optim.lr_scheduler.StepLR(optimizer, 10, 0.1)
-    # scheduler_warmup = GradualWarmupScheduler(optimizer, multiplier=1, total_epoch=5, after_scheduler=scheduler)
+    if config["optim_args"]["scheduler"] == "cosine":
+        scheduler = cosine_lr(optimizer,
+                              base_lr=config["optim_args"]["lr"],
+                              warmup_length=config["optim_args"]["warmup_epochs"] * len(train_loader),
+                              steps=len(train_loader) * config["training"]["epochs"])
+    elif config["optim_args"]["scheduler"] == "step":
+        scheduler = step_lr(optimizer,
+                            base_lr=config["optim_args"]["lr"],
+                            warmup_length=config["optim_args"]["warmup_epochs"] * len(train_loader),
+                            adjust_steps=config["optim_args"]["step_epochs"] * len(train_loader),
+                            gamma=config["optim_args"]["gamma"])
+    elif config["optim_args"]["scheduler"] == "old":
+        scheduler = None
+        scheduler_temp = torch.optim.lr_scheduler.StepLR(optimizer, 10, 0.1)
+        scheduler_warmup = GradualWarmupScheduler(optimizer, multiplier=1, total_epoch=5, after_scheduler=scheduler_temp)
 
     main_logger.info(f'Size of training set: {len(train_loader.dataset)}, size of batches: {len(train_loader)}')
     main_logger.info(f'Size of validation set: {len(val_loader.dataset)}, size of batches: {len(val_loader)}')
@@ -128,8 +129,9 @@ def main():
 
     for epoch in range(1, config["training"]["epochs"] + 1):
         main_logger.info(f'Training for epoch [{epoch}]')
-        # scheduler_warmup.step()
-        train_statics = train(model, train_loader, optimizer, scheduler, device, epoch)
+        if scheduler is None:
+            scheduler_warmup.step()
+        train_statics = train(model, train_loader, optimizer, scheduler, device, epoch, config["training"]["clip_grad"])
         loss = train_statics["loss"]
         elapsed_time = train_statics["time"]
         loss_stats.append(loss)

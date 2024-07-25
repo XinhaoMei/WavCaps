@@ -70,10 +70,11 @@ We provide codes and pre-trained models for audio-language retrieval, automated 
 Please cite our paper as below if you use the WavCaps dataset.
 ```bibtex
 @article{mei2023wavcaps,
-  title={WavCaps: A ChatGPT-Assisted Weakly-Labelled Audio Captioning Dataset for Audio-Language Multimodal Research},
-  author={Mei, Xinhao and Meng, Chutong and Liu, Haohe and Kong, Qiuqiang and Ko, Tom and Zhao, Chengqi and Plumbley, Mark D and Zou, Yuexian and Wang, Wenwu},
-  journal={arXiv preprint arXiv:2303.17395},
-  year={2023}
+  author={Mei, Xinhao and Meng, Chutong and Liu, Haohe and Kong, Qiuqiang and Ko, Tom and Zhao, Chengqi and Plumbley, Mark D. and Zou, Yuexian and Wang, Wenwu},
+  journal={IEEE/ACM Transactions on Audio, Speech, and Language Processing}, 
+  title={Wav{C}aps: A {ChatGPT}-Assisted Weakly-Labelled Audio Captioning Dataset for Audio-Language Multimodal Research}, 
+  year={2024},
+  pages={1-15},
 }
 ```
 
